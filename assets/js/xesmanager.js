@@ -7,10 +7,10 @@ var myModal = new bootstrap.Modal(document.getElementById("verticalycentered"), 
 wetaUsers();
 whatallbal();
 function whatallbal() {
-  var whihjsdeq = "whihjsdeq"; 
+  var whihjsdeq = "whihjsdeq";
     $.ajax({
     type: "POST",
-    url: "api/mg/", 
+    url: "https://dspgattendance.000webhostapp.com/n68ui6753tn1/api/mg/",
 	dataType: "json",
     data: {whihjsdeq: whihjsdeq},
         success: function(allBalResponds){
@@ -18,16 +18,16 @@ function whatallbal() {
           document.getElementById("wingsum").innerHTML = "&#8358;"+slf.balanceall;
         },
         error : function(jqXHR, textStatus, errorThrown) {
-          
+
           if(jqXHR.responseText == "reload404"){window.location.reload()}
         }
-    });    
+    });
 }
 function wetaUsers() {
-    var xhmyrqms = "xhmyrqms"; 
+    var xhmyrqms = "xhmyrqms";
     $.ajax({
     type: "POST",
-    url: "api/mg/", 
+    url: "https://dspgattendance.000webhostapp.com/n68ui6753tn1/api/mg/",
 	dataType: "json",
     data: {xhmyrqms: xhmyrqms},
         success: function(ListResponds){
@@ -37,16 +37,16 @@ function wetaUsers() {
             wetaMonths();
         },
         error : function(jqXHR, textStatus, errorThrown) {
-          
+
           if(jqXHR.responseText == "reload404"){window.location.reload()}
         }
-    });           
+    });
 }
 function wetaMonths() {
   var zhibkey = "zhibkey";
     $.ajax({
 			type: "POST",
-			url: "api/mg/", 
+			url: "https://dspgattendance.000webhostapp.com/n68ui6753tn1/api/mg/",
       dataType: 'json',
 			data: {zhibkey: zhibkey},
 				success: function(monthsData){
@@ -54,7 +54,7 @@ function wetaMonths() {
           lsmtglobeCount = 1;
 				},
         error : function(jqXHR, textStatus, errorThrown) {
-          
+
           if(jqXHR.responseText == "reload404"){window.location.reload()}
         }
 			});
@@ -101,9 +101,9 @@ function frdblist(wvzh) { //users list
                 }else if(item.saveUPstatus == "rejected"){
                   PIT +=  `<td id="td${item.cci}"><span class="badge bg-danger">${item.saveUPstatus}</span></td>`;
                 }
-               
+
                 PIT +='</tr>';
-            }); 
+            });
             PIT += `</tbody>
             </table>`;
             $("#lsbody").html(PIT);
@@ -119,7 +119,7 @@ function frdblist(wvzh) { //users list
             datatables.forEach(datatable => {
                 new simpleDatatables.DataTable(datatable);
             })
-            ListPack.forEach(function(item, index) { 
+            ListPack.forEach(function(item, index) {
                 $('#lscustomers').on('click', '#view'+item.cci+'', function(event) {
                   var kcns = item.cci;
                    actionListedUsers(kcns, wvzh);
@@ -127,27 +127,27 @@ function frdblist(wvzh) { //users list
                 });
 }
 function  actionListedUsers(kcns, wvzh){ //active/pending/all users
-    var zbdu = lsusglobe.filter(wwxe => wwxe.cci == kcns); 
-    var username = zbdu.map(qlxm => qlxm.username); 
-    var saveUPaccountNo = zbdu.map(qlxm => qlxm.saveUPaccountNo); 
-    var fullName = zbdu.map(qlxm => qlxm.fullName); 
-    var gender = zbdu.map(qlxm => qlxm.gender); 
-    var phoneNo = zbdu.map(qlxm => qlxm.phoneNo); 
-    var emailAddress = zbdu.map(qlxm => qlxm.emailAddress); 
-    var passport = zbdu.map(qlxm => qlxm.passport); 
-    var whatsappNo = zbdu.map(qlxm => qlxm.whatsappNo); 
-    var aboutme = zbdu.map(qlxm => qlxm.aboutme); 
-    var bankName = zbdu.map(qlxm => qlxm.bankName); 
-    var bankAccountNumber = zbdu.map(qlxm => qlxm.bankAccountNumber); 
-    var bankAccountName = zbdu.map(qlxm => qlxm.bankAccountName); 
-    var saveUPstatus = zbdu.map(qlxm => qlxm.saveUPstatus); 
-    var activatedby = zbdu.map(qlxm => qlxm.activatedby); 
-    var cci = zbdu.map(qlxm => qlxm.cci); 
-    var userAs = zbdu.map(qlxm => qlxm.userAs); 
-    var datejoined = zbdu.map(qlxm => qlxm.datejoined); 
-    var ipjoined = zbdu.map(qlxm => qlxm.ipjoined); 
+    var zbdu = lsusglobe.filter(wwxe => wwxe.cci == kcns);
+    var username = zbdu.map(qlxm => qlxm.username);
+    var saveUPaccountNo = zbdu.map(qlxm => qlxm.saveUPaccountNo);
+    var fullName = zbdu.map(qlxm => qlxm.fullName);
+    var gender = zbdu.map(qlxm => qlxm.gender);
+    var phoneNo = zbdu.map(qlxm => qlxm.phoneNo);
+    var emailAddress = zbdu.map(qlxm => qlxm.emailAddress);
+    var passport = zbdu.map(qlxm => qlxm.passport);
+    var whatsappNo = zbdu.map(qlxm => qlxm.whatsappNo);
+    var aboutme = zbdu.map(qlxm => qlxm.aboutme);
+    var bankName = zbdu.map(qlxm => qlxm.bankName);
+    var bankAccountNumber = zbdu.map(qlxm => qlxm.bankAccountNumber);
+    var bankAccountName = zbdu.map(qlxm => qlxm.bankAccountName);
+    var saveUPstatus = zbdu.map(qlxm => qlxm.saveUPstatus);
+    var activatedby = zbdu.map(qlxm => qlxm.activatedby);
+    var cci = zbdu.map(qlxm => qlxm.cci);
+    var userAs = zbdu.map(qlxm => qlxm.userAs);
+    var datejoined = zbdu.map(qlxm => qlxm.datejoined);
+    var ipjoined = zbdu.map(qlxm => qlxm.ipjoined);
 
-   
+
 
     var LTT = ` <div id="uldivforallusers"></div>
                 <div class="tab-pane fade show active profile-overview" id="profile-overview">
@@ -159,10 +159,10 @@ function  actionListedUsers(kcns, wvzh){ //active/pending/all users
         }else{
           LTT += '<img src="assets/img/nophoto.png" alt="Profile" width="120px"> &nbsp;&nbsp; <span id="prfadmeditcl1"></span>';
         }
-        
+
     LTT +=     `</div>
             </div>`;
-    
+
     LTT += `
                   <h5 class="card-title">Profile Details</h5>
 
@@ -170,7 +170,7 @@ function  actionListedUsers(kcns, wvzh){ //active/pending/all users
                   <div class="col-lg-3 col-md-4 label" style="font-weight: 600; color: rgba(1, 41, 112, 0.6);">Username</div>
                   <div class="col-lg-9 col-md-8">${username} </div>
                   </div>
-                  
+
                   <div class="row" style="margin-bottom: 20px; font-size: 15px;">
                   <div class="col-lg-3 col-md-4 label" style="font-weight: 600; color: rgba(1, 41, 112, 0.6);">saveUP ACC. NO.</div>
                   <div class="col-lg-9 col-md-8">${saveUPaccountNo} </div>
@@ -190,17 +190,17 @@ function  actionListedUsers(kcns, wvzh){ //active/pending/all users
                       <div class="col-lg-3 col-md-4 label" style="font-weight: 600; color: rgba(1, 41, 112, 0.6);">Email</div>
                       <div class="col-lg-9 col-md-8" id="prfadmedit3">${emailAddress} &nbsp;&nbsp; <span id="prfadmeditcl3"></span></div>
                   </div>
-                  
+
                   <div class="row" style="margin-bottom: 20px; font-size: 15px;">
                       <div class="col-lg-3 col-md-4 label" style="font-weight: 600; color: rgba(1, 41, 112, 0.6);">Gender</div>
                       <div class="col-lg-9 col-md-8" id="prfadmedit4">${gender} &nbsp;&nbsp; <span id="prfadmeditcl4"></span></div>
                   </div>
-                  
+
                   <div class="row" style="margin-bottom: 20px; font-size: 15px;">
                       <div class="col-lg-3 col-md-4 label" style="font-weight: 600; color: rgba(1, 41, 112, 0.6);">WhatsApp No</div>
                       <div class="col-lg-9 col-md-8" id="prfadmedit5">${whatsappNo} &nbsp;&nbsp; <span id="prfadmeditcl5"></span></div>
                   </div>
-                  
+
                   <div class="row" style="margin-bottom: 20px; font-size: 15px;">
                       <div class="col-lg-3 col-md-4 label" style="font-weight: 600; color: rgba(1, 41, 112, 0.6);">About Me</div>
                       <div class="col-lg-9 col-md-8" id="prfadmedit6">${aboutme} &nbsp;&nbsp; <span id="prfadmeditcl6"></span></div>
@@ -222,12 +222,12 @@ function  actionListedUsers(kcns, wvzh){ //active/pending/all users
                     ${saveUPstatus} &nbsp;&nbsp; <button id="lsurspadrbt" onclick="lsurspadrbtck()" class="btn btn-primary btn-sm" style="font-weight:bold;"> <i class="ri-add-line"></i> </button>
                     </div>
                   </div>
-                 
-                  
+
+
                   <div class="row" id="lsurspadrrow" style="margin-bottom: 20px; font-size: 15px; display:none;">
                     <div class="col-lg-3 col-md-4 label"></div>
                     <div class="col-lg-9 col-md-8">
-                    
+
                     <div id="lsurspadr" class="col-md-3" >
                     <br><br>
                     <form onsubmit="return false;" method="post">
@@ -249,10 +249,10 @@ function  actionListedUsers(kcns, wvzh){ //active/pending/all users
                   </div>
 
                   <div class="row" id="acdppaymsg" style="padding-top:40px;">
-                    
+
                   </div>
-                  
-                  
+
+
                   <div class="row" id="vbpback" style="padding-top:50px">
                     <div class="col-lg-3 col-md-4 label">
                     <button onclick="lsgoback()" type="button" class="btn btn-warning btn-sm"><i class="bx bxs-share"></i> Back</button>
@@ -261,8 +261,8 @@ function  actionListedUsers(kcns, wvzh){ //active/pending/all users
                 </div>`;
     $("#viewbody").html(LTT);
 
-  
-    
+
+
     if(wvzh == 1){
       document.getElementById("lsurspadrbt").style.display = "none";
       document.getElementById("vbpback").style.display = "none";
@@ -282,18 +282,18 @@ function  actionListedUsers(kcns, wvzh){ //active/pending/all users
         <button id="prfchangepass" class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-change-password">Change Password</button>
       </li>
       </ul>`;
-      document.getElementById("prfoverview").addEventListener("click", function() {	
+      document.getElementById("prfoverview").addEventListener("click", function() {
         changepassdivbringin(1);
       });
-      document.getElementById("prfeditpr").addEventListener("click", function() {	
+      document.getElementById("prfeditpr").addEventListener("click", function() {
         changepassdivbringin(2);
       });
-      document.getElementById("prfchangepass").addEventListener("click", function() {	
+      document.getElementById("prfchangepass").addEventListener("click", function() {
         changepassdivbringin(3);
       });
     }
-    
-    
+
+
 
     function changepassdivbringin(ele) {
       if(ele == 1){
@@ -309,22 +309,22 @@ function  actionListedUsers(kcns, wvzh){ //active/pending/all users
         for (let i = 1; i < 7; i++) {
           document.getElementById(`prfadmeditcl${[i]}`).innerHTML = `<a href="javascript:;" onclick="prfeditdel('${cci}',${[i]})"> <span class="badge bg-warning"><i class="bi bi-exclamation-octagon me-1"></i> Delete</span> </a>`;
         }
-        
-        if(passport == "" || passport == null){ 
+
+        if(passport == "" || passport == null){
           document.getElementById("prfadmeditcl1").innerHTML = "";
-        }if(phoneNo == "" || phoneNo == null){ 
+        }if(phoneNo == "" || phoneNo == null){
           document.getElementById("prfadmeditcl2").innerHTML = "";
         }
-        if(emailAddress == "" || emailAddress == null){ 
+        if(emailAddress == "" || emailAddress == null){
           document.getElementById("prfadmeditcl3").innerHTML = "";
         }
-        if(gender == "" || gender == null){ 
+        if(gender == "" || gender == null){
           document.getElementById("prfadmeditcl4").innerHTML = "";
         }
-        if(whatsappNo == "" || whatsappNo == null){ 
+        if(whatsappNo == "" || whatsappNo == null){
           document.getElementById("prfadmeditcl5").innerHTML = "";
         }
-        if(aboutme == "" || aboutme == null){ 
+        if(aboutme == "" || aboutme == null){
           document.getElementById("prfadmeditcl6").innerHTML = "";
         }
       }else if(ele == 3){
@@ -363,15 +363,15 @@ function prfeditdel(shonicc, shonino) { //delete any data from edit profile
   var imgdate1 = Date.now(); //for network timing
   $.ajax({
     type: "POST",
-    url: "api/mg/", 
+    url: "https://dspgattendance.000webhostapp.com/n68ui6753tn1/api/mg/",
     dataType: 'json',
     data: {tuqzbra: tuqzbra, acmemid: acmemid, presise: presise},
       success: function(data){
-        var slf = data; 
+        var slf = data;
         if(slf.ErrorNote == "none"){
           //document.getElementById(`prfadmeditcl${shonino}`).innerHTML = '';
           document.getElementById(`prfadmedit${shonino}`).innerHTML = '';
-          
+
           myModal.show();
           document.getElementById("prf-modal-title").classList.remove("text-danger");
           document.getElementById("prf-modal-title").classList.add("text-success");
@@ -379,13 +379,13 @@ function prfeditdel(shonicc, shonino) { //delete any data from edit profile
           document.getElementById("prf-modal-body").innerHTML = "Removed Successfuly";
           // var rxuc = lsusglobe.filter(qpdy => qpdy.cci == shonicc);
           //   var saveUPstatus = rxuc.map(xgwn => xgwn.saveUPstatus = lsmkatv);
-          var zbdu = lsusglobe.filter(wwxe => wwxe.cci == shonicc); 
-          zbdu.map(qlxm => qlxm.gender = slf.gender); 
-          zbdu.map(qlxm => qlxm.phoneNo = slf.phone); 
-          zbdu.map(qlxm => qlxm.emailAddress = slf.email); 
-          zbdu.map(qlxm => qlxm.passport = slf.passport); 
-          zbdu.map(qlxm => qlxm.whatsappNo = slf.whatsapp); 
-          zbdu.map(qlxm => qlxm.aboutme = slf.about); 
+          var zbdu = lsusglobe.filter(wwxe => wwxe.cci == shonicc);
+          zbdu.map(qlxm => qlxm.gender = slf.gender);
+          zbdu.map(qlxm => qlxm.phoneNo = slf.phone);
+          zbdu.map(qlxm => qlxm.emailAddress = slf.email);
+          zbdu.map(qlxm => qlxm.passport = slf.passport);
+          zbdu.map(qlxm => qlxm.whatsappNo = slf.whatsapp);
+          zbdu.map(qlxm => qlxm.aboutme = slf.about);
         }else{
           document.getElementById(`prfadmeditcl${shonino}`).innerHTML =`<a href="javascript:;" onclick="prfeditdel('${shonicc}',${shonino})"> <span class="badge bg-warning"><i class="bi bi-exclamation-octagon me-1"></i> Delete</span> </a>`;
           myModal.show();
@@ -395,7 +395,7 @@ function prfeditdel(shonicc, shonino) { //delete any data from edit profile
           document.getElementById("prf-modal-body").innerHTML = slf.ErrorMsg;
         }
       },
-      error : function(jqXHR, textStatus, errorThrown) { 
+      error : function(jqXHR, textStatus, errorThrown) {
         if(jqXHR.responseText == "reload404"){window.location.reload()}
         document.getElementById(`prfadmeditcl${shonino}`).innerHTML =`<a href="javascript:;" onclick="prfeditdel('${shonicc}',${shonino})"> <span class="badge bg-warning"><i class="bi bi-exclamation-octagon me-1"></i> Delete</span> </a>`;
         var imgdate2 = Date.now();
@@ -421,23 +421,23 @@ function lsurssubmit() { //make pending/active/deactive/rejected
   var lsmkuid = document.getElementById("lsmkuid").value;
   var lsmkatv = document.getElementById("lsmkatv").value;
   var lsmkamt = document.getElementById("lsmkamt").value;
-  
+
   if(lsmkatv.length>3){
     //console.log(lsmkuid)
     //console.log(lsmkatv)
     $.ajax({
       type: "POST",
-      url: "api/mg/",
+      url: "https://dspgattendance.000webhostapp.com/n68ui6753tn1/api/mg/",
       dataType: "json",
       data: {lsmkuid: lsmkuid, lsmkatv: lsmkatv, lsmkamt: lsmkamt},
         success: function(actionData){
           //lsusglobe
           var slf = actionData;
           if(slf.ErrorNote == "none"){
-            var rxuc = lsusglobe.filter(qpdy => qpdy.cci == lsmkuid); 
-            var saveUPstatus = rxuc.map(xgwn => xgwn.saveUPstatus = lsmkatv); 
-            //var activatedby = rxuc.map(xgwn => xgwn.activatedby = lsmkuid); 
-            
+            var rxuc = lsusglobe.filter(qpdy => qpdy.cci == lsmkuid);
+            var saveUPstatus = rxuc.map(xgwn => xgwn.saveUPstatus = lsmkatv);
+            //var activatedby = rxuc.map(xgwn => xgwn.activatedby = lsmkuid);
+
             lsgoback();
             if(saveUPstatus == "pending"){
               document.getElementById("td"+lsmkuid).innerHTML =  `<span class="badge bg-warning">${saveUPstatus}</span>`;
@@ -453,9 +453,9 @@ function lsurssubmit() { //make pending/active/deactive/rejected
           }
         },
         error : function(jqXHR, textStatus, errorThrown) {
-          
+
           if(jqXHR.responseText == "reload404"){window.location.reload()}
-        }	 
+        }
     });
   }
 }
@@ -546,8 +546,8 @@ var UDL = `<div class="card">
                   <textarea  class="form-control" id="indpnote" name="indpnote" rows="5" required></textarea>
                   <div id="indpnoteDF" class="help-block"></div>
                 </div>
-                
-                
+
+
                 <div class="text-center">
                   <button id="acindpsm" onclick="acdpinput('${kcns}')" type="submit" class="btn btn-primary"  style="display:none;">Submit</button>
                   <button id="acindpsmdb" type="submit" class="btn btn-primary" disabled>
@@ -562,7 +562,7 @@ var UDL = `<div class="card">
 
           <h3 align="center" style="padding-top:30px;" id="actabletitle"></h3>
                 <div id="actablefdp">
-                
+
                 </div>
 
                   <div class="row" id="vbacback" style="padding-top:30px">
@@ -570,7 +570,7 @@ var UDL = `<div class="card">
                     <button onclick="lsgoback()" type="button" class="btn btn-warning btn-sm"><i class="bx bxs-share"></i> Back</button>
                     </div>
                   </div>
-                  
+
         </div>
         </div>`;
     document.getElementById("dpfrfixdrow").innerHTML = UDL;
@@ -578,16 +578,16 @@ var UDL = `<div class="card">
     var acmemid = kcns;
     $.ajax({
 			type: "POST",
-			url: "api/mg/", 
+			url: "https://dspgattendance.000webhostapp.com/n68ui6753tn1/api/mg/",
       dataType: 'json',
 			data: {warcrvj: warcrvj, acmemid: acmemid},
 				success: function(fixamtData){
-          
-          actfixamount = fixamtData;  
+
+          actfixamount = fixamtData;
 				  fxdpfrsv()
 				},
         error : function(jqXHR, textStatus, errorThrown) {
-          
+
           if(jqXHR.responseText == "reload404"){window.location.reload()}
         }
 			});
@@ -600,7 +600,7 @@ var UDL = `<div class="card">
         var pgfjwhej = "pgfjwhej";
         $.ajax({
           type: "POST",
-          url: "api/mg/", 
+          url: "https://dspgattendance.000webhostapp.com/n68ui6753tn1/api/mg/",
           dataType: 'json',
           data: {pgfjwhej: pgfjwhej, acmemid: acmemid, usemntid:usemntid},
             success: function(fxdpData){
@@ -608,27 +608,27 @@ var UDL = `<div class="card">
               listfixeddp()
             },
             error : function(jqXHR, textStatus, errorThrown) {
-              
+
               if(jqXHR.responseText == "reload404"){window.location.reload()}
-            } 
+            }
           });
       }
-      
+
       function listfixeddp() {
         $("#acindpsmdb").hide();//submit disabled
         $("#acindpsm").show(); //submit
-        var fixedamount = actfixamount.map(qlxm => qlxm.fixedamount); 
+        var fixedamount = actfixamount.map(qlxm => qlxm.fixedamount);
         var currentmonthid = JSON.stringify(actfixamount.map(qlxm => qlxm.currentmonthid)).replace(/[\[\]"]+/g,"");
-        document.getElementById("indpfxin").value = fixedamount;	
-        
-        
+        document.getElementById("indpfxin").value = fixedamount;
+
+
         //lsmtglobe {month global}
         //var cxiCHK = actdpchannel.map(bill => bill.cxi);
         //var dpmonthidCHK = actdpchannel.map(bill => bill.dpmonthid);
         //var dpmonthCHK = actdpchannel.map(bill => bill.dpmonth);
         if(currentmonthid == ""){ //check if fixed dp is empty
-          document.getElementById("actitle").innerHTML = `<b>Fixed saveUP for Janurary (&#x20A6;${fixedamount})</b>`;   
-          document.getElementById("actabletitle").innerHTML = 'January'; 
+          document.getElementById("actitle").innerHTML = `<b>Fixed saveUP for Janurary (&#x20A6;${fixedamount})</b>`;
+          document.getElementById("actabletitle").innerHTML = 'January';
           document.getElementById("indpmthid").value = "1";
           document.getElementById("indpmth").value = "January"
         }else{
@@ -636,8 +636,8 @@ var UDL = `<div class="card">
           //dpmonthCHK = dpmonthCHK.pop();
           var dpmonthidCHK =  lsmtglobe.filter(bill => bill.mcc == currentmonthid).map(bill => bill.mcc);
           var dpmonthCHK =  lsmtglobe.filter(bill => bill.mcc == currentmonthid).map(bill => bill.month);
-          document.getElementById("actitle").innerHTML = `<b>Fixed saveUP for ${dpmonthCHK} (&#x20A6;${fixedamount})</b>`;   
-          document.getElementById("actabletitle").innerHTML = dpmonthCHK; 
+          document.getElementById("actitle").innerHTML = `<b>Fixed saveUP for ${dpmonthCHK} (&#x20A6;${fixedamount})</b>`;
+          document.getElementById("actabletitle").innerHTML = dpmonthCHK;
           document.getElementById("indpmthid").value = dpmonthidCHK;
           document.getElementById("indpmth").value = dpmonthCHK;
         }
@@ -658,7 +658,7 @@ var UDL = `<div class="card">
           RJW +='<tr>';
           RJW += '<th scope="row">';
           RJW += no++;
-          RJW += '</th>'; 
+          RJW += '</th>';
           RJW += `
           <td>&#x20A6;${item.dpamount}</td>
           <td>${item.dpnote}</td>
@@ -686,14 +686,14 @@ function onacdpfm(ele) { //+ && - of daily pay form
   }
 }
 function acdpinput(kcns) { //submit dp fixed
-  var indpamount  = document.getElementById("indpamount").value;	
+  var indpamount  = document.getElementById("indpamount").value;
   var indppm  = document.acdpform.indppm.value;
 	var indpnote  = document.getElementById("indpnote").value;
   //hidden
   var fixedamount = document.getElementById("indpfxin").value;
   //var indpmmmid = document.getElementById("indpmmmid").value;
   //console.log(indpmmmid)
-	var indpamountDF = indppmDF = indpnoteDF = true; 
+	var indpamountDF = indppmDF = indpnoteDF = true;
 
     if(myTrim(indpamount) == "") {
         printError("indpamountDF", "");
@@ -715,7 +715,7 @@ function acdpinput(kcns) { //submit dp fixed
               var rightF1 = Number(fixedamount)*Number(vseSg);
               var rightF2 = Number(fixedamount)*Number(vseSg2);
               printError("indpamountDF", "Amount Not Accepted. Recommended &#x20A6;"+rightF1+" or &#x20A6;"+rightF2);
-            }  
+            }
         }
     }
   /*
@@ -748,17 +748,17 @@ function acdpinput(kcns) { //submit dp fixed
             printError("indpnoteDF", "");
             indpnoteDF = false;
         }
-    } 
+    }
 		// Prevent the form from being submitted if there are any errors
 	if ((indpamountDF || indppmDF || indpnoteDF) == true) {
 	   return false;
     } else {
       acdpserve(kcns);
-    } 
+    }
 }
 function acdpserve(kcns) {
   var imgdate1 = Date.now(); //for network timing
-  var indpamount  = document.getElementById("indpamount").value;	
+  var indpamount  = document.getElementById("indpamount").value;
   var indppm  = document.acdpform.indppm.value;
 	var indpnote  = document.getElementById("indpnote").value;
   //hidden
@@ -770,10 +770,10 @@ function acdpserve(kcns) {
 
   $("#acindpsm").hide();
   $("#acindpsmdb").show();
-  
+
   $.ajax({
 		type: "POST",
-		url: "api/mg/", 
+		url: "https://dspgattendance.000webhostapp.com/n68ui6753tn1/api/mg/",
 		dataType: "json",
 		data: {acmemid: acmemid, indpamount: indpamount, indppm: indppm, indpnote: indpnote, fixedamount: fixedamount, indpmthid: indpmthid, indpmth: indpmth, indpammlt: indpammlt},
 		success: function(data){
@@ -787,7 +787,7 @@ function acdpserve(kcns) {
                                                                   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                                                   </div>
 
-                                                                  
+
                                                             </div>`;
          whatallbal();
          dpFixdpay(kcns);
@@ -822,9 +822,9 @@ function acdpserve(kcns) {
                                                           </div>`;
       }
       $("#acindpsmdb").hide();
-      $("#acindpsm").show();                      
+      $("#acindpsm").show();
   }
-		 
+
 	});
 }
 function myTrim(x) {
@@ -836,4 +836,4 @@ String.prototype.nl2br = function(){
 }
 function printError(elemId, hintMsg) {
   document.getElementById(elemId).innerHTML = hintMsg;
-} 
+}

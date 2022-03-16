@@ -1,9 +1,9 @@
 lsusglobe = "";
 lsusglobeCount = 0;
-document.getElementById("sumprofchange").addEventListener("click", function() {	
+document.getElementById("sumprofchange").addEventListener("click", function() {
         prfedsubtn();
 });
-document.getElementById("submchangepass").addEventListener("click", function() {	
+document.getElementById("submchangepass").addEventListener("click", function() {
     prfchngps();
 });
 broghtme();
@@ -14,21 +14,21 @@ function broghtme() {
     var imgdate1 = Date.now(); //for network timing
     $.ajax({
         type: "POST",
-        url: "api/nu/", 
+        url: "https://dspgattendance.000webhostapp.com/n68ui6753tn1/api/nu/", 
         dataType: 'json',
         data: {dzdiedx: dzdiedx},
             success: function(mymentdata){
                 $("#growspinmo").hide();
-               
+
                 lsusglobe = mymentdata;
                 lsusglobeCount = 1;
-                var saveUPstatus = lsusglobe.map(gmkl => gmkl.saveUPstatus); 
+                var saveUPstatus = lsusglobe.map(gmkl => gmkl.saveUPstatus);
                 if(saveUPstatus == "active"){
                     dpchargesplus();
                 }else{
                     profilesuplus();
                 }
-                
+
             },
             error : function(jqXHR, textStatus, errorThrown) {
                 if(jqXHR.responseText == "reload404"){window.location.reload()}
@@ -47,7 +47,7 @@ function broghtme() {
                                                                             <i class="bi bi-exclamation-octagon me-1"></i>
                                                                             Ooops! This is not your fault. Please refresh...
                                                                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                                                            
+
                                                                     </div>
                                                                     <div><a href="javascript:;" onclick="broghtme()">Click To Refresh</a></div>`;
                 }
@@ -63,40 +63,40 @@ function profilesuplus() {
     $("#lguprofilesection").show();
     $("#lgudashboardtitle").hide();
     $("#lgudashboardsection").hide();
-		var saveUPaccountNo = lsusglobe.map(gmkl => gmkl.saveUPaccountNo); 
-		var fullName = lsusglobe.map(gmkl => gmkl.fullName); 
-		var gender = lsusglobe.map(gmkl => gmkl.gender); 
-		var phoneNo = lsusglobe.map(gmkl => gmkl.phoneNo); 
-		var emailAddress = lsusglobe.map(gmkl => gmkl.emailAddress); 
-		var passport = lsusglobe.map(gmkl => gmkl.passport); 
-		var whatsappNo = lsusglobe.map(gmkl => gmkl.whatsappNo); 
-		var aboutme = lsusglobe.map(gmkl => gmkl.aboutme); 
-		var bankName = lsusglobe.map(gmkl => gmkl.bankName); 
-		var bankAccountNumber = lsusglobe.map(gmkl => gmkl.bankAccountNumber); 
-		var bankAccountName = lsusglobe.map(gmkl => gmkl.bankAccountName); 
-		var saveUPstatus = lsusglobe.map(gmkl => gmkl.saveUPstatus); 
-		var activatedby = lsusglobe.map(gmkl => gmkl.activatedby); 
-		var cci = lsusglobe.map(gmkl => gmkl.cci); 
-		var userAs = lsusglobe.map(gmkl => gmkl.userAs); 
-		var datejoined = lsusglobe.map(gmkl => gmkl.datejoined); 
+		var saveUPaccountNo = lsusglobe.map(gmkl => gmkl.saveUPaccountNo);
+		var fullName = lsusglobe.map(gmkl => gmkl.fullName);
+		var gender = lsusglobe.map(gmkl => gmkl.gender);
+		var phoneNo = lsusglobe.map(gmkl => gmkl.phoneNo);
+		var emailAddress = lsusglobe.map(gmkl => gmkl.emailAddress);
+		var passport = lsusglobe.map(gmkl => gmkl.passport);
+		var whatsappNo = lsusglobe.map(gmkl => gmkl.whatsappNo);
+		var aboutme = lsusglobe.map(gmkl => gmkl.aboutme);
+		var bankName = lsusglobe.map(gmkl => gmkl.bankName);
+		var bankAccountNumber = lsusglobe.map(gmkl => gmkl.bankAccountNumber);
+		var bankAccountName = lsusglobe.map(gmkl => gmkl.bankAccountName);
+		var saveUPstatus = lsusglobe.map(gmkl => gmkl.saveUPstatus);
+		var activatedby = lsusglobe.map(gmkl => gmkl.activatedby);
+		var cci = lsusglobe.map(gmkl => gmkl.cci);
+		var userAs = lsusglobe.map(gmkl => gmkl.userAs);
+		var datejoined = lsusglobe.map(gmkl => gmkl.datejoined);
 		var ipjoined = lsusglobe.map(gmkl => gmkl.ipjoined);
     /*
-		var saveUPaccountNo = JSON.stringify(lsusglobe.map(gmkl => gmkl.saveUPaccountNo)).replace(/[\[\]"]+/g,""); 
-		var fullName = JSON.stringify(lsusglobe.map(gmkl => gmkl.fullName)).replace(/[\[\]"]+/g,""); 
-		var gender = JSON.stringify(lsusglobe.map(gmkl => gmkl.gender)).replace(/[\[\]"]+/g,""); 
-		var phoneNo = JSON.stringify(lsusglobe.map(gmkl => gmkl.phoneNo)).replace(/[\[\]"]+/g,""); 
-		var emailAddress = JSON.stringify(lsusglobe.map(gmkl => gmkl.emailAddress)).replace(/[\[\]"]+/g,""); 
-		var passport = JSON.stringify(lsusglobe.map(gmkl => gmkl.passport)).replace(/[\[\]"]+/g,""); 
-		var whatsappNo = JSON.stringify(lsusglobe.map(gmkl => gmkl.whatsappNo)).replace(/[\[\]"]+/g,""); 
-		var aboutme = JSON.stringify(lsusglobe.map(gmkl => gmkl.aboutme)).replace(/[\[\]"]+/g,""); 
-		var bankName = JSON.stringify(lsusglobe.map(gmkl => gmkl.bankName)).replace(/[\[\]"]+/g,""); 
-		var bankAccountNumber = JSON.stringify(lsusglobe.map(gmkl => gmkl.bankAccountNumber)).replace(/[\[\]"]+/g,""); 
-		var bankAccountName = JSON.stringify(lsusglobe.map(gmkl => gmkl.bankAccountName)).replace(/[\[\]"]+/g,""); 
-		var saveUPstatus = JSON.stringify(lsusglobe.map(gmkl => gmkl.saveUPstatus)).replace(/[\[\]"]+/g,""); 
-		var activatedby = JSON.stringify(lsusglobe.map(gmkl => gmkl.activatedby)).replace(/[\[\]"]+/g,""); 
-		var cci = JSON.stringify(lsusglobe.map(gmkl => gmkl.cci)).replace(/[\[\]"]+/g,""); 
-		var userAs = JSON.stringify(lsusglobe.map(gmkl => gmkl.userAs)).replace(/[\[\]"]+/g,""); 
-		var datejoined = JSON.stringify(lsusglobe.map(gmkl => gmkl.datejoined)).replace(/[\[\]"]+/g,""); 
+		var saveUPaccountNo = JSON.stringify(lsusglobe.map(gmkl => gmkl.saveUPaccountNo)).replace(/[\[\]"]+/g,"");
+		var fullName = JSON.stringify(lsusglobe.map(gmkl => gmkl.fullName)).replace(/[\[\]"]+/g,"");
+		var gender = JSON.stringify(lsusglobe.map(gmkl => gmkl.gender)).replace(/[\[\]"]+/g,"");
+		var phoneNo = JSON.stringify(lsusglobe.map(gmkl => gmkl.phoneNo)).replace(/[\[\]"]+/g,"");
+		var emailAddress = JSON.stringify(lsusglobe.map(gmkl => gmkl.emailAddress)).replace(/[\[\]"]+/g,"");
+		var passport = JSON.stringify(lsusglobe.map(gmkl => gmkl.passport)).replace(/[\[\]"]+/g,"");
+		var whatsappNo = JSON.stringify(lsusglobe.map(gmkl => gmkl.whatsappNo)).replace(/[\[\]"]+/g,"");
+		var aboutme = JSON.stringify(lsusglobe.map(gmkl => gmkl.aboutme)).replace(/[\[\]"]+/g,"");
+		var bankName = JSON.stringify(lsusglobe.map(gmkl => gmkl.bankName)).replace(/[\[\]"]+/g,"");
+		var bankAccountNumber = JSON.stringify(lsusglobe.map(gmkl => gmkl.bankAccountNumber)).replace(/[\[\]"]+/g,"");
+		var bankAccountName = JSON.stringify(lsusglobe.map(gmkl => gmkl.bankAccountName)).replace(/[\[\]"]+/g,"");
+		var saveUPstatus = JSON.stringify(lsusglobe.map(gmkl => gmkl.saveUPstatus)).replace(/[\[\]"]+/g,"");
+		var activatedby = JSON.stringify(lsusglobe.map(gmkl => gmkl.activatedby)).replace(/[\[\]"]+/g,"");
+		var cci = JSON.stringify(lsusglobe.map(gmkl => gmkl.cci)).replace(/[\[\]"]+/g,"");
+		var userAs = JSON.stringify(lsusglobe.map(gmkl => gmkl.userAs)).replace(/[\[\]"]+/g,"");
+		var datejoined = JSON.stringify(lsusglobe.map(gmkl => gmkl.datejoined)).replace(/[\[\]"]+/g,"");
 		var ipjoined = JSON.stringify(lsusglobe.map(gmkl => gmkl.ipjoined)).replace(/[\[\]"]+/g,"");
     */
         var profilenimagedropdck = '';
@@ -108,7 +108,7 @@ function profilesuplus() {
 
         if(saveUPstatus == "active"){
 
-            
+
            if(passport == ""){
                 profilenimagedropdck += `<img src="assets/img/nophoto.png" alt="Profile" class="rounded-circle">`;
                 profileimage += '<img src="assets/img/nophoto.png" alt="Profile" class="rounded-circle">';
@@ -122,7 +122,7 @@ function profilesuplus() {
                                 <span>${saveUPaccountNo}</span>`;
 
             textundername = saveUPaccountNo;
-            
+
         }else{
             if(passport == "" || passport == null){
                 profilenimagedropdck += `<img src="assets/img/nophoto.png" alt="Profile" class="rounded-circle">`;
@@ -139,9 +139,9 @@ function profilesuplus() {
 
             importmessagebody += `Please Note that if you don't complete your profile, your account will not be activated.
             To get your account activated, click Edit Profile and complete your profile, and save changes. <br><br>
-            More importantly upload your passport photograph in the Edit Profile settings. 
+            More importantly upload your passport photograph in the Edit Profile settings.
             Your account information will be verified and activated. <br><br>
-            Once your account is verified, a message will be sent to you via email. 
+            Once your account is verified, a message will be sent to you via email.
             Your new username will become your Account No and your password will be the same password you used during registration.`;
         }
 
@@ -153,7 +153,7 @@ function profilesuplus() {
         PFM += "<h2>"+fullName+"</h2>";
         PFM += textundername;
         document.getElementById("lguprofilenanimg").innerHTML = PFM;
-        
+
         document.getElementById("lguprofileimpinfbody").innerHTML = importmessagebody;
 
         document.getElementById("lguprofiledetails").innerHTML = `<div class="row">
@@ -170,22 +170,22 @@ function profilesuplus() {
                                             <div class="col-lg-3 col-md-4 label">Email</div>
                                             <div class="col-lg-9 col-md-8">${emailAddress}</div>
                                         </div>
-                                        
+
                                         <div class="row">
                                             <div class="col-lg-3 col-md-4 label">Gender</div>
                                             <div class="col-lg-9 col-md-8">${gender}</div>
                                         </div>
-                                        
+
                                         <div class="row">
                                             <div class="col-lg-3 col-md-4 label">WhatsApp No</div>
                                             <div class="col-lg-9 col-md-8">${whatsappNo}</div>
                                         </div>
-                                        
+
                                         <div class="row">
                                             <div class="col-lg-3 col-md-4 label">About Me</div>
                                             <div class="col-lg-9 col-md-8">${aboutme}</div>
                                         </div>`;
-        
+
 
             document.getElementById("fullName").value = fullName;
             document.getElementById("Phone").value = phoneNo;
@@ -199,37 +199,37 @@ function profilesuplus() {
                 document.getElementById("lguprofileuploadimage").innerHTML = `<input name="passportphoto" type="hidden" class="form-control" id="passportphoto" value="${passport}">
                 <input name="passval" type="hidden" class="form-control" id="passval" value="1">
                 <div id="passportphotoY" class="help-block"></div>`;
-            }  
+            }
             if(whatsappNo != "" && whatsappNo != null){ //using != because its not exactly a string its ['null']
                 document.getElementById("whatsapp").value = whatsappNo;
                 document.getElementById("whatsapp").setAttribute("readonly", "");
-            }  
+            }
             if(gender != "" && gender != null){ //using != because its not exactly a string its ['null']
                 //document.getElementById("lgugenderfmdiv").innerHTML = gender;
                 document.getElementById("gender").value = gender;
                 document.getElementById("gender").setAttribute("disabled", "");
-            } 
+            }
             if(aboutme != "" && aboutme != null){ //using != because its not exactly a string its ['null']
                 //document.getElementById("lguaboutmefmdiv").innerHTML = aboutme;
                 document.getElementById("aboutme").innerHTML = aboutme;
                 document.getElementById("aboutme").setAttribute("readonly", "");
-            } 
+            }
 
             if((emailAddress != "") && (passport != "" && passport != null) && (whatsappNo != "" && whatsappNo != null) && (gender != "" && gender != null) && (aboutme != "" && aboutme != null)){
                 document.getElementById("lguasubmitfmdiv").innerHTML = "";
             }
 }
 function prfedsubtn() {
-    var email  = document.getElementById("email").value;	
-	var passportphoto  = document.getElementById("passportphoto").value;	
-	var whatsapp  = document.getElementById("whatsapp").value;	
-	var gender  = document.getElementById("gender").value;	
+    var email  = document.getElementById("email").value;
+	var passportphoto  = document.getElementById("passportphoto").value;
+	var whatsapp  = document.getElementById("whatsapp").value;
+	var gender  = document.getElementById("gender").value;
 	var aboutme  = document.getElementById("aboutme").value;
     //abstract
-    //var profileid = JSON.stringify(lsusglobe.map(gmkl => gmkl.cci)).replace(/[\[\]"]+/g,""); 
+    //var profileid = JSON.stringify(lsusglobe.map(gmkl => gmkl.cci)).replace(/[\[\]"]+/g,"");
 
-	var emailY = passportphotoY = whatsappY = genderY = aboutmeY = true; 
-	
+	var emailY = passportphotoY = whatsappY = genderY = aboutmeY = true;
+
 
     if(myTrim(email).length > 3 ) {
         var regex = /^\S+@\S+\.\S+$/;
@@ -276,24 +276,24 @@ function prfedsubtn() {
 	if(myTrim(aboutme) == "" || myTrim(aboutme).length > 0) {
         printError("aboutmeY", "");
 		aboutmeY = false;
-    } 
-	
+    }
+
 	if ((emailY || passportphotoY || whatsappY || genderY || aboutmeY) == true) {
 	   return false;
     } else {
         prfedprc();
-    }  
+    }
 }
 function prfedprc(){
-    var email  = document.getElementById("email").value;	
+    var email  = document.getElementById("email").value;
 	var passval  = document.getElementById("passval").value;
     if(passval == 1){
         var passportphoto = document.getElementById("passportphoto").value
     }else{
         var passportphoto = document.getElementById("passportphoto").files[0];
     }
-	var whatsapp  = document.getElementById("whatsapp").value;	
-	var gender  = document.getElementById("gender").value;	
+	var whatsapp  = document.getElementById("whatsapp").value;
+	var gender  = document.getElementById("gender").value;
 	var aboutme  = document.getElementById("aboutme").value;
     //abstract
     var profileid = JSON.stringify(lsusglobe.map(gmkl => gmkl.cci)).replace(/[\[\]"]+/g,"");
@@ -302,25 +302,25 @@ function prfedprc(){
     $("#sumprofchangespin").show();
 
     var formdata = new FormData();
-    formdata.append("profileid", profileid); 
-    formdata.append("email", email); 
-    formdata.append("passval", passval); 
-    formdata.append("passportphoto", passportphoto); 
-    formdata.append("whatsapp", whatsapp); 
-    formdata.append("gender", gender); 
+    formdata.append("profileid", profileid);
+    formdata.append("email", email);
+    formdata.append("passval", passval);
+    formdata.append("passportphoto", passportphoto);
+    formdata.append("whatsapp", whatsapp);
+    formdata.append("gender", gender);
     formdata.append("aboutme", aboutme);
         $.ajax({
             type: "POST",
-            url: "api/nu/",
+            url: "https://dspgattendance.000webhostapp.com/n68ui6753tn1/api/nu/",
             dataType: "json",
             data: formdata,
             contentType: false,
             processData: false,
            // data: {profileid:profileid, email: email, passportphoto: passportphoto, whatsapp: whatsapp, gender: gender, aboutme: aboutme, },
             success: function(data){
-                var slf = data; 
+                var slf = data;
                 if(slf.ErrorNote == "none"){
-                    
+
                     var prfmsg = `<div class="alert alert-success alert-dismissible fade show" role="alert" style="margin-top: 40px;">
                                 <i class="bi bi-check-circle me-1"></i>
                                 Profile Update Successfull
@@ -339,7 +339,7 @@ function prfedprc(){
                                 </div>`;
                     pointofmessage(prfmsg);
                 }
-                
+
             },
             error : function(jqXHR, textStatus, errorThrown) {
                 if(jqXHR.responseText == "reload404"){window.location.reload()}
@@ -358,12 +358,12 @@ function prfedprc(){
                                                                             <i class="bi bi-exclamation-octagon me-1"></i>
                                                                             Ooops! This is not your fault. Please try again...
                                                                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                                                            
+
                                                                     </div>`;
                 }
                 pointofmessage(prfmsg);
               }
-             
+
         });
 
     function pointofmessage(params) {
@@ -372,11 +372,11 @@ function prfedprc(){
     }
 }
 function prfchngps() {
-    var currentPassword  = document.getElementById("currentPassword").value;	
-	var newpassword  = document.getElementById("newpassword").value;	
+    var currentPassword  = document.getElementById("currentPassword").value;
+	var newpassword  = document.getElementById("newpassword").value;
 	var renewpassword  = document.getElementById("renewpassword").value;
-    var currentPasswordY = newpasswordY = renewpasswordY = true; 
-	
+    var currentPasswordY = newpasswordY = renewpasswordY = true;
+
 		// Validate currentPassword
     if(myTrim(currentPassword) == "") {
         printError("currentPasswordY", "Enter Your Current Password.");
@@ -413,17 +413,17 @@ function prfchngps() {
             printError("renewpasswordY", "");
             renewpasswordY = false;
         }
-    } 
+    }
 		// Prevent the form from being submitted if there are any errors
 	if ((currentPasswordY || newpasswordY || renewpasswordY) == true) {
 	   return false;
     } else {
         prfchngpsprc();
-    } 
+    }
 }
 function prfchngpsprc() {
-    var currentPassword  = document.getElementById("currentPassword").value;	
-	var newpassword  = document.getElementById("newpassword").value;	
+    var currentPassword  = document.getElementById("currentPassword").value;
+	var newpassword  = document.getElementById("newpassword").value;
 	var renewpassword  = document.getElementById("renewpassword").value;
 	var profileid = JSON.stringify(lsusglobe.map(gmkl => gmkl.cci)).replace(/[\[\]"]+/g,"");
 	$("#submchangepass").hide();
@@ -431,12 +431,12 @@ function prfchngpsprc() {
 	var imgdate1 = Date.now();
 	$.ajax({
 		type: "POST",
-		url: "api/nu/",
+		url: "https://dspgattendance.000webhostapp.com/n68ui6753tn1/api/nu/",
 		dataType: "json",
 		data: {profileid:profileid, currentPassword: currentPassword, newpassword: newpassword, renewpassword: renewpassword},
 		success: function(data){
-			
-            var slf = data; 
+
+            var slf = data;
             if(slf.ErrorNote == "none"){
                 var prfmsg = `<div class="alert alert-success alert-dismissible fade show" role="alert" style="margin-top: 40px;">
                                 <i class="bi bi-check-circle me-1"></i>
@@ -445,7 +445,7 @@ function prfchngpsprc() {
                                 </div>`;
                  pointofpsmessage(prfmsg);
                 document.getElementById("lguchangepasssumitfmdiv").innerHTML = "";
-                
+
                 document.getElementById("currentPassword").setAttribute("readonly", "");
                 document.getElementById("newpassword").setAttribute("readonly", "");
                 document.getElementById("renewpassword").setAttribute("readonly", "");
@@ -459,7 +459,7 @@ function prfchngpsprc() {
                             </div>`;
                 pointofpsmessage(prfmsg);
             }
-			
+
 		},
         error : function(jqXHR, textStatus, errorThrown) {
             if(jqXHR.responseText == "reload404"){window.location.reload()}
@@ -478,12 +478,12 @@ function prfchngpsprc() {
                                                                         <i class="bi bi-exclamation-octagon me-1"></i>
                                                                         Ooops! This is not your fault. Please try again...
                                                                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                                                        
+
                                                                 </div>`;
             }
             pointofpsmessage(prfmsg);
           }
-		 
+
 	});
     function pointofpsmessage(params) {
         document.getElementById("lguprofilepasschange1").innerHTML = params;
@@ -495,12 +495,12 @@ function dpchargesplus(){
     $("#lgudashboardsection").show();
     $("#lguprofiletitle").hide();
     $("#lguprofilesection").hide();
-    var saveUPaccountNo = lsusglobe.map(wmrt => wmrt.saveUPaccountNo); 
-    var cmonthcc = lsusglobe.map(wmrt => wmrt.cmonthcc); 
-    var cmonthnm = lsusglobe.map(wmrt => wmrt.cmonthnm); 
-    var cmsavingstotal = lsusglobe.map(wmrt => wmrt.cmsavingstotal); 
-    var totalwithdrawal = lsusglobe.map(wmrt => wmrt.totalwithdrawal); 
-    var savingof = lsusglobe.map(wmrt => wmrt.savingof); 
+    var saveUPaccountNo = lsusglobe.map(wmrt => wmrt.saveUPaccountNo);
+    var cmonthcc = lsusglobe.map(wmrt => wmrt.cmonthcc);
+    var cmonthnm = lsusglobe.map(wmrt => wmrt.cmonthnm);
+    var cmsavingstotal = lsusglobe.map(wmrt => wmrt.cmsavingstotal);
+    var totalwithdrawal = lsusglobe.map(wmrt => wmrt.totalwithdrawal);
+    var savingof = lsusglobe.map(wmrt => wmrt.savingof);
 
     document.getElementById("dhbaccno").innerHTML = saveUPaccountNo;
     document.getElementById("dhbcurmonth").innerHTML = "| "+cmonthnm;
@@ -520,7 +520,7 @@ function bringoncmdp() {
     var imgdate1 = Date.now();
     $.ajax({
         type: "POST",
-        url: "api/nu/", 
+        url: "https://dspgattendance.000webhostapp.com/n68ui6753tn1/api/nu/",
   dataType: 'json',
         data: {tuqzbra: tuqzbra},
             success: function(cmdpdata){
@@ -530,7 +530,7 @@ function bringoncmdp() {
             error : function(jqXHR, textStatus, errorThrown) {
                 if(jqXHR.responseText == "reload404"){window.location.reload()}
                 var imgdate2 = Date.now();
-                var alldate = imgdate2 - imgdate1; 
+                var alldate = imgdate2 - imgdate1;
                 if(alldate > 60000){ //1 min cos of upload
                     document.getElementById("dhbcmpays").innerHTML = `<div class="alert alert-danger alert-dismissible fade show" role="alert">
                                                                             <i class="bi bi-exclamation-octagon me-1"></i>
@@ -546,7 +546,7 @@ function bringoncmdp() {
                                                                     </div>
                                                                     <a href="javascript:;" onclick="bringoncmdp()">Click to refresh...</a>`;
                 }
-              } 
+              }
         });
 }
 function arrangecmdp(cmchannel){
@@ -567,7 +567,7 @@ function arrangecmdp(cmchannel){
           RJW +='<tr>';
           RJW += '<th scope="row">';
           RJW += no++;
-          RJW += '</th>'; 
+          RJW += '</th>';
           RJW += `
           <td>&#x20A6;${item.dpamount}</td>
           <td>${item.dpnote}</td>

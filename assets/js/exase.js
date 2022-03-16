@@ -1,21 +1,21 @@
-document.getElementById("createF").addEventListener("click", function() { 
+document.getElementById("createF").addEventListener("click", function() {
     registerFrm();
     //var esre = "The number you are using is already in use";
     //var esre = "Account Created Successfully";
     //displayRegMssg("regmess", esre, 1);
 });
-document.getElementById("loginE").addEventListener("click", function() { 
+document.getElementById("loginE").addEventListener("click", function() {
     loginFrm();
 });
 
 
 function registerFrm() {
-	var fullname  = document.getElementById("fullname").value;	
-	var phonenumber  = document.getElementById("phonenumber").value;	
-	var email  = document.getElementById("email").value;	
+	var fullname  = document.getElementById("fullname").value;
+	var phonenumber  = document.getElementById("phonenumber").value;
+	var email  = document.getElementById("email").value;
 	var password  = document.getElementById("password").value;
-	var fullnameY = phonenumberY = emailY = passwordY = true; 
-	
+	var fullnameY = phonenumberY = emailY = passwordY = true;
+
     if(myTrim(fullname).length < 4){
         printError("fullnameY", "Enter Your Full Name");
         document.getElementById("fullname").classList.remove('form-control');
@@ -35,8 +35,8 @@ function registerFrm() {
         document.getElementById("fullname").classList.add('form-control');
         fullnameY = false;
     }
-    
-   
+
+
     if(myTrim(phonenumber).length !== 11){
         printError("phonenumberY", "Please Enter Your Valide Phone Number");
         document.getElementById("phonenumber").classList.remove('form-control');
@@ -50,7 +50,7 @@ function registerFrm() {
         document.getElementById("phonenumber").classList.add('form-control');
         phonenumberY = false;
     }
-    
+
     if(myTrim(email).length > 0) {
         var regex = /^\S+@\S+\.\S+$/;
         if(regex.test(email) === false) {
@@ -90,31 +90,31 @@ function registerFrm() {
         document.getElementById("password").classList.add('form-control');
         passwordY = false;
     }
-    
-		
+
+
 	if ((fullnameY || phonenumberY || emailY || passwordY) == true) {
 	   return false;
     } else {
         registerMem();
-    }  
+    }
 }
 function registerMem(){
-		
-	var fullname  = document.getElementById("fullname").value;	
-	var phonenumber  = document.getElementById("phonenumber").value;	
-	var email  = document.getElementById("email").value;	
+
+	var fullname  = document.getElementById("fullname").value;
+	var phonenumber  = document.getElementById("phonenumber").value;
+	var email  = document.getElementById("email").value;
 	var password  = document.getElementById("password").value;
 
     document.getElementById("cFg").style.display = "none";
     document.getElementById("cFw").style.display = "block";
-	
+
 	$.ajax({
 		type: "POST",
-		url: "api/in/", 
+		url: "https://dspgattendance.000webhostapp.com/n68ui6753tn1/api/in/", 
 		dataType: "json",
 		data: {fullname: fullname, phonenumber: phonenumber, email: email, password: password},
 		success: function(data){
-            var slf = data; 
+            var slf = data;
             if(slf.ErrorNote == "none"){
                 document.getElementById("vRegister").style.display = "none";
                 document.getElementById("vLogin").style.display = "block";
@@ -163,11 +163,11 @@ function swcSL(dnvs) {
 }
 
 function loginFrm() {
-		
-	var yourUsername  = document.getElementById("yourUsername").value;	
+
+	var yourUsername  = document.getElementById("yourUsername").value;
 	var yourPassword  = document.getElementById("yourPassword").value;
-	var yourUsernameY = yourPasswordY = true; 
-	
+	var yourUsernameY = yourPasswordY = true;
+
 
     if(myTrim(yourUsername).length < 4) {
         printError("yourUsernameY", " Invalid Username.");
@@ -182,7 +182,7 @@ function loginFrm() {
         document.getElementById("yourUsername").classList.add('form-control');
         yourUsernameY = false;
     }
- 
+
 
     if(myTrim(yourPassword).length < 6){
         printError("yourPasswordY", "Invalid Password");
@@ -203,30 +203,30 @@ function loginFrm() {
         document.getElementById("yourPassword").classList.add('form-control');
         yourPasswordY = false;
     }
-     
+
 		// Prevent the form from being submitted if there are any errors
 	if ((yourUsernameY || yourPasswordY) == true) {
 	   return false;
     } else {
         loginMem();
-    }  
+    }
 };
 function loginMem(){
-		
-	var yourUsername  = document.getElementById("yourUsername").value;	
+
+	var yourUsername  = document.getElementById("yourUsername").value;
 	var yourPassword  = document.getElementById("yourPassword").value;
-	
+
     document.getElementById("loginE").style.display = "none";
     document.getElementById("lEw").style.display = "block";
-	
-	
+
+
 	$.ajax({
 		type: "POST",
-		url: "api/in/", 
+		url: "https://dspgattendance.000webhostapp.com/n68ui6753tn1/api/in/",
 		dataType: "json",
 		data: {yourUsername: yourUsername, yourPassword: yourPassword, },
 		success: function(data){
-			
+
             var slf = data;
             if(slf.Ijxtxt == "1"){
                 document.getElementById("regmessLg").innerHTML = ` <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -254,7 +254,7 @@ function loginMem(){
                                                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                                             </div>`;
       }
-		 
+
 	});
 
 }
@@ -267,5 +267,4 @@ String.prototype.nl2br = function(){
 }
 function printError(elemId, hintMsg) {
     document.getElementById(elemId).innerHTML = hintMsg;
-} 
-
+}
