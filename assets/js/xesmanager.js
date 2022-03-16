@@ -157,7 +157,7 @@ function  actionListedUsers(kcns, wvzh){ //active/pending/all users
                 <label for="profileImage" class="col-md-4 col-lg-3 col-form-label" style="font-weight: 600; color: rgba(1, 41, 112, 0.6);">Profile Image</label>
                 <div class="col-md-8 col-lg-9" id="prfadmedit1"> `;
         if(passport != "" && passport != null){ //using != because its not exactly a string its ['null']
-          LTT += '<img src="tfjxliwojcj/img/'+passport+'" alt="Profile" width="120px"> &nbsp;&nbsp; <span id="prfadmeditcl1"></span>';
+          LTT += '<img src="https://dspgattendance.000webhostapp.com/n68ui6753tn1/tfjxliwojcj/img/'+passport+'" alt="Profile" width="120px"> &nbsp;&nbsp; <span id="prfadmeditcl1"></span>';
         }else{
           LTT += '<img src="assets/img/nophoto.png" alt="Profile" width="120px"> &nbsp;&nbsp; <span id="prfadmeditcl1"></span>';
         }

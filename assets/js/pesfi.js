@@ -115,8 +115,8 @@ function profilesuplus() {
                 profilenimagedropdck += `<img src="assets/img/nophoto.png" alt="Profile" class="rounded-circle">`;
                 profileimage += '<img src="assets/img/nophoto.png" alt="Profile" class="rounded-circle">';
             }else{
-                profilenimagedropdck += `<img src="tfjxliwojcj/img/${passport}" alt="Profile" class="rounded-circle">`;
-                profileimage += '<img src="tfjxliwojcj/img/'+passport+'" alt="Profile" class="rounded-circle">';
+                profilenimagedropdck += `<img src="https://dspgattendance.000webhostapp.com/n68ui6753tn1/tfjxliwojcj/img/${passport}" alt="Profile" class="rounded-circle">`;
+                profileimage += '<img src="https://dspgattendance.000webhostapp.com/n68ui6753tn1/tfjxliwojcj/img/'+passport+'" alt="Profile" class="rounded-circle">';
             }
 
             profilenimagedropdck += `<span class="d-none d-md-block dropdown-toggle ps-2" >${fullName}</span>`;
@@ -130,8 +130,8 @@ function profilesuplus() {
                 profilenimagedropdck += `<img src="assets/img/nophoto.png" alt="Profile" class="rounded-circle">`;
                 profileimage += '<img src="assets/img/nophoto.png" alt="Profile" class="rounded-circle">';
             }else{
-                profilenimagedropdck += `<img src="tfjxliwojcj/img/${passport}" alt="Profile" class="rounded-circle">`;
-                profileimage += '<img src="tfjxliwojcj/img/'+passport+'" alt="Profile" class="rounded-circle">';
+                profilenimagedropdck += `<img src="https://dspgattendance.000webhostapp.com/n68ui6753tn1/tfjxliwojcj/img/${passport}" alt="Profile" class="rounded-circle">`;
+                profileimage += '<img src="https://dspgattendance.000webhostapp.com/n68ui6753tn1/tfjxliwojcj/img/'+passport+'" alt="Profile" class="rounded-circle">';
             }
             profilenimagedropdck += `<span class="d-none d-md-block dropdown-toggle ps-2" >${fullName}</span>`;
             profiledropdown += `<h6>${fullName}</h6>
