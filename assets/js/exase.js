@@ -229,6 +229,8 @@ function loginMem(){
 
             var slf = data;
             if(slf.Ijxtxt == "1"){
+		document.cookie = "drientr = "+Ijxtxt.coni+"; expires=Thu, 22 Dec 2022 12:00:00 UTC; path=/";
+                document.cookie = "flientr = "+Ijxtxt.ctwi+"; expires=Thu, 22 Dec 2022 12:00:00 UTC; path=/";
                 document.getElementById("regmessLg").innerHTML = ` <div class="alert alert-success alert-dismissible fade show" role="alert">
                                                                         <i class="bi bi-check-circle me-1"></i>
                                                                         Loggin In...
