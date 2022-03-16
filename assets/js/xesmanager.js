@@ -1,3 +1,5 @@
+var drientr = getCookie("drientr");
+var flientr = getCookie("flientr");
 var lsusglobe = "";
 var lsusglobeCount = 0;
 var lsmtglobe = "";
@@ -12,7 +14,7 @@ function whatallbal() {
     type: "POST",
     url: "https://dspgattendance.000webhostapp.com/n68ui6753tn1/api/mg/",
 	dataType: "json",
-    data: {whihjsdeq: whihjsdeq},
+    data: {drientr: drientr, flientr: flientr, whihjsdeq: whihjsdeq},
         success: function(allBalResponds){
           var slf = allBalResponds;
           document.getElementById("wingsum").innerHTML = "&#8358;"+slf.balanceall;
@@ -29,7 +31,7 @@ function wetaUsers() {
     type: "POST",
     url: "https://dspgattendance.000webhostapp.com/n68ui6753tn1/api/mg/",
 	dataType: "json",
-    data: {xhmyrqms: xhmyrqms},
+    data: {drientr: drientr, flientr: flientr, xhmyrqms: xhmyrqms},
         success: function(ListResponds){
             lsusglobe = ListResponds;
             lsusglobeCount = 1;
@@ -48,7 +50,7 @@ function wetaMonths() {
 			type: "POST",
 			url: "https://dspgattendance.000webhostapp.com/n68ui6753tn1/api/mg/",
       dataType: 'json',
-			data: {zhibkey: zhibkey},
+			data: {drientr: drientr, flientr: flientr, zhibkey: zhibkey},
 				success: function(monthsData){
 				  lsmtglobe = monthsData;
           lsmtglobeCount = 1;
@@ -365,7 +367,7 @@ function prfeditdel(shonicc, shonino) { //delete any data from edit profile
     type: "POST",
     url: "https://dspgattendance.000webhostapp.com/n68ui6753tn1/api/mg/",
     dataType: 'json',
-    data: {tuqzbra: tuqzbra, acmemid: acmemid, presise: presise},
+    data: {drientr: drientr, flientr: flientr, tuqzbra: tuqzbra, acmemid: acmemid, presise: presise},
       success: function(data){
         var slf = data;
         if(slf.ErrorNote == "none"){
@@ -429,7 +431,7 @@ function lsurssubmit() { //make pending/active/deactive/rejected
       type: "POST",
       url: "https://dspgattendance.000webhostapp.com/n68ui6753tn1/api/mg/",
       dataType: "json",
-      data: {lsmkuid: lsmkuid, lsmkatv: lsmkatv, lsmkamt: lsmkamt},
+      data: {drientr: drientr, flientr: flientr, lsmkuid: lsmkuid, lsmkatv: lsmkatv, lsmkamt: lsmkamt},
         success: function(actionData){
           //lsusglobe
           var slf = actionData;
@@ -580,7 +582,7 @@ var UDL = `<div class="card">
 			type: "POST",
 			url: "https://dspgattendance.000webhostapp.com/n68ui6753tn1/api/mg/",
       dataType: 'json',
-			data: {warcrvj: warcrvj, acmemid: acmemid},
+			data: {drientr: drientr, flientr: flientr, warcrvj: warcrvj, acmemid: acmemid},
 				success: function(fixamtData){
 
           actfixamount = fixamtData;
@@ -602,7 +604,7 @@ var UDL = `<div class="card">
           type: "POST",
           url: "https://dspgattendance.000webhostapp.com/n68ui6753tn1/api/mg/",
           dataType: 'json',
-          data: {pgfjwhej: pgfjwhej, acmemid: acmemid, usemntid:usemntid},
+          data: {drientr: drientr, flientr: flientr, pgfjwhej: pgfjwhej, acmemid: acmemid, usemntid:usemntid},
             success: function(fxdpData){
               actdpchannel = fxdpData;
               listfixeddp()
@@ -775,7 +777,7 @@ function acdpserve(kcns) {
 		type: "POST",
 		url: "https://dspgattendance.000webhostapp.com/n68ui6753tn1/api/mg/",
 		dataType: "json",
-		data: {acmemid: acmemid, indpamount: indpamount, indppm: indppm, indpnote: indpnote, fixedamount: fixedamount, indpmthid: indpmthid, indpmth: indpmth, indpammlt: indpammlt},
+		data: {drientr: drientr, flientr: flientr, acmemid: acmemid, indpamount: indpamount, indppm: indppm, indpnote: indpnote, fixedamount: fixedamount, indpmthid: indpmthid, indpmth: indpmth, indpammlt: indpammlt},
 		success: function(data){
       var slf = data;
       if(slf.ErrorNote == "none"){
@@ -826,6 +828,22 @@ function acdpserve(kcns) {
   }
 
 	});
+}
+function getCookie(name) {
+  // Split cookie string and get all individual name=value pairs in an array
+  var cookieArr = document.cookie.split(";");
+  // Loop through the array elements
+  for(var i = 0; i < cookieArr.length; i++) {
+      var cookiePair = cookieArr[i].split("=");
+      /* Removing whitespace at the beginning of the cookie name
+      and compare it with the given string */
+      if(name == cookiePair[0].trim()) {
+          // Decode the cookie value and return
+          return decodeURIComponent(cookiePair[1]);
+      }
+  }
+  // Return null if not found
+  return null;
 }
 function myTrim(x) {
   return x.replace(/^\s+|\s+$/gm,'');

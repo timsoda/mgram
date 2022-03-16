@@ -1,3 +1,5 @@
+var drientr = getCookie("drientr");
+var flientr = getCookie("flientr");
 lsusglobe = "";
 lsusglobeCount = 0;
 document.getElementById("sumprofchange").addEventListener("click", function() {
@@ -14,9 +16,9 @@ function broghtme() {
     var imgdate1 = Date.now(); //for network timing
     $.ajax({
         type: "POST",
-        url: "https://dspgattendance.000webhostapp.com/n68ui6753tn1/api/nu/", 
+        url: "https://dspgattendance.000webhostapp.com/n68ui6753tn1/api/nu/",
         dataType: 'json',
-        data: {dzdiedx: dzdiedx},
+        data: {drientr: drientr, flientr: flientr, dzdiedx: dzdiedx},
             success: function(mymentdata){
                 $("#growspinmo").hide();
 
@@ -302,6 +304,8 @@ function prfedprc(){
     $("#sumprofchangespin").show();
 
     var formdata = new FormData();
+    formdata.append("drientr", drientr);
+    formdata.append("flientr", flientr);
     formdata.append("profileid", profileid);
     formdata.append("email", email);
     formdata.append("passval", passval);
@@ -316,7 +320,7 @@ function prfedprc(){
             data: formdata,
             contentType: false,
             processData: false,
-           // data: {profileid:profileid, email: email, passportphoto: passportphoto, whatsapp: whatsapp, gender: gender, aboutme: aboutme, },
+           // data: {drientr: drientr, flientr: flientr, profileid:profileid, email: email, passportphoto: passportphoto, whatsapp: whatsapp, gender: gender, aboutme: aboutme, },
             success: function(data){
                 var slf = data;
                 if(slf.ErrorNote == "none"){
@@ -433,7 +437,7 @@ function prfchngpsprc() {
 		type: "POST",
 		url: "https://dspgattendance.000webhostapp.com/n68ui6753tn1/api/nu/",
 		dataType: "json",
-		data: {profileid:profileid, currentPassword: currentPassword, newpassword: newpassword, renewpassword: renewpassword},
+		data: {drientr: drientr, flientr: flientr, profileid:profileid, currentPassword: currentPassword, newpassword: newpassword, renewpassword: renewpassword},
 		success: function(data){
 
             var slf = data;
@@ -522,7 +526,7 @@ function bringoncmdp() {
         type: "POST",
         url: "https://dspgattendance.000webhostapp.com/n68ui6753tn1/api/nu/",
   dataType: 'json',
-        data: {tuqzbra: tuqzbra},
+        data: {drientr: drientr, flientr: flientr, tuqzbra: tuqzbra},
             success: function(cmdpdata){
                 var cmaccumulation = cmdpdata;
                 arrangecmdp(cmaccumulation);
@@ -578,6 +582,22 @@ function arrangecmdp(cmchannel){
         RJW += '</tbody>'+
                 '</table>';
         $("#dhbcmpays").html(RJW);
+}
+function getCookie(name) {
+    // Split cookie string and get all individual name=value pairs in an array
+    var cookieArr = document.cookie.split(";");
+    // Loop through the array elements
+    for(var i = 0; i < cookieArr.length; i++) {
+        var cookiePair = cookieArr[i].split("=");
+        /* Removing whitespace at the beginning of the cookie name
+        and compare it with the given string */
+        if(name == cookiePair[0].trim()) {
+            // Decode the cookie value and return
+            return decodeURIComponent(cookiePair[1]);
+        }
+    }
+    // Return null if not found
+    return null;
 }
 function myTrim(x) {
     return x.replace(/^\s+|\s+$/gm,'');

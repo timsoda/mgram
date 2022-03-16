@@ -1,3 +1,5 @@
+var drientr = getCookie("drientr");
+var flientr = getCookie("flientr");
 document.getElementById("createF").addEventListener("click", function() {
     registerFrm();
     //var esre = "The number you are using is already in use";
@@ -110,7 +112,7 @@ function registerMem(){
 
 	$.ajax({
 		type: "POST",
-		url: "https://dspgattendance.000webhostapp.com/n68ui6753tn1/api/in/", 
+		url: "https://dspgattendance.000webhostapp.com/n68ui6753tn1/api/in/",
 		dataType: "json",
 		data: {fullname: fullname, phonenumber: phonenumber, email: email, password: password},
 		success: function(data){
@@ -229,7 +231,7 @@ function loginMem(){
 
             var slf = data;
             if(slf.Ijxtxt == "1"){
-		document.cookie = "drientr = "+slf.coni+"; expires=Thu, 22 Dec 2022 12:00:00 UTC; path=/";
+                document.cookie = "drientr = "+slf.coni+"; expires=Thu, 22 Dec 2022 12:00:00 UTC; path=/";
                 document.cookie = "flientr = "+slf.ctwi+"; expires=Thu, 22 Dec 2022 12:00:00 UTC; path=/";
                 document.getElementById("regmessLg").innerHTML = ` <div class="alert alert-success alert-dismissible fade show" role="alert">
                                                                         <i class="bi bi-check-circle me-1"></i>
@@ -260,7 +262,22 @@ function loginMem(){
 	});
 
 }
-
+function getCookie(name) {
+    // Split cookie string and get all individual name=value pairs in an array
+    var cookieArr = document.cookie.split(";");
+    // Loop through the array elements
+    for(var i = 0; i < cookieArr.length; i++) {
+        var cookiePair = cookieArr[i].split("=");
+        /* Removing whitespace at the beginning of the cookie name
+        and compare it with the given string */
+        if(name == cookiePair[0].trim()) {
+            // Decode the cookie value and return
+            return decodeURIComponent(cookiePair[1]);
+        }
+    }
+    // Return null if not found
+    return null;
+}
 function myTrim(x) {
     return x.replace(/^\s+|\s+$/gm,'');
 }
