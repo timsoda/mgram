@@ -120,7 +120,7 @@ function registerMem(){
             if(slf.ErrorNote == "none"){
                 document.getElementById("vRegister").style.display = "none";
                 document.getElementById("vLogin").style.display = "block";
-                var scmsg = "Your Account was creted successfully. Please login with your Phone Number and Password";
+                var scmsg = "Your Account was created successfully. Please login with your Phone Number and Password";
                 displayRegMssg("regmessLg", scmsg, 1);// DISPLAY LOGIN PAGE, HIDE REGISTER, AND DISPLAY IN THE RESMESSAG OF LOGIN
                 document.getElementById("lginDiv").style.display = "none";
             }else{
