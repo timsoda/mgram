@@ -351,7 +351,7 @@ function prfedprc(){
                 $("#sumprofchangespin").hide();
                 var imgdate2 = Date.now();
                 var alldate = imgdate2 - imgdate1;
-                if(alldate > 120000){ //2 mins cos of upload
+                if(alldate > 300000){ //5 mins cos of upload
                    var prfmsg = `<div class="alert alert-danger alert-dismissible fade show" role="alert">
                                                                             <i class="bi bi-exclamation-octagon me-1"></i>
                                                                             Ooops! Please Check your network and try again...
