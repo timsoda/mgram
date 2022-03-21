@@ -497,6 +497,8 @@ function prfchngpsprc() {
 function dpchargesplus(){
     $("#lgudashboardtitle").show();
     $("#lgudashboardsection").show();
+    $("#lgudashlink1").show();
+    $("#lgudashlink2").show();
     $("#lguprofiletitle").hide();
     $("#lguprofilesection").hide();
     var saveUPaccountNo = lsusglobe.map(wmrt => wmrt.saveUPaccountNo);
