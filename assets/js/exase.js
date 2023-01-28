@@ -229,10 +229,13 @@ function loginMem(){
 		data: {yourUsername: yourUsername, yourPassword: yourPassword, },
 		success: function(data){
 
-            var slf = data;
+           var slf = data;
             if(slf.Ijxtxt == "1"){
-                document.cookie = "drientr = "+slf.coni+"; expires=Thu, 22 Dec 2022 12:00:00 UTC; path=/";
-                document.cookie = "flientr = "+slf.ctwi+"; expires=Thu, 22 Dec 2022 12:00:00 UTC; path=/";
+                var d = new Date();
+                d.setTime(d.getTime() + (120 * 24 * 60 * 60 * 1000));
+                var expires = "expires="+d.toUTCString();
+                document.cookie = "drientr = "+slf.coni+"; " + expires + "; path=/"
+                document.cookie = "flientr = "+slf.ctwi+"; " + expires + "; path=/";
                 document.getElementById("regmessLg").innerHTML = ` <div class="alert alert-success alert-dismissible fade show" role="alert">
                                                                         <i class="bi bi-check-circle me-1"></i>
                                                                         Loggin In...
